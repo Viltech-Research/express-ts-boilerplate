@@ -6,11 +6,8 @@
 import { Application } from "express";
 const passport = require('passport');
 
-
-import { IJwt } from "../interfaces/vendors/IJwt";
 import LocalStrategy from '../services/strategies/Local';
 import Log from '../middlewares/Log';
-import User from '../models/User';
 
 class Passport {
     public mountPackage(_express: Application): Application {
@@ -24,7 +21,6 @@ class Passport {
         });
 
         passport.deserializeUser((_user: any, done: any) => {
-            console.log("deserializeUser")
             process.nextTick(() => {
                 done(null, _user)
             }) 

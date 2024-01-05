@@ -19,17 +19,6 @@ class Http {
     public static mount(_express: Application): Application {
         Log.info('Booting the \'HTTP\' middleware...');
 
-        // // Enables the body parser
-        // _express.use(bodyParser.json({
-        //     limit: Locals.config().maxUploadLimit
-        // }));
-
-        // _express.use(bodyParser.urlencoded({
-        //     limit: Locals.config().maxUploadLimit,
-        //     parameterLimit: 10 * 1024 * 1024, // 10mb in bytes
-        //     extended: false
-        // }));
-
         // Enables the body parser
         _express.use(bodyParser.json());
 
